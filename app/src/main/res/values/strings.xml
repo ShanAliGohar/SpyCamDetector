@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">SpyCamDetector</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bedroom_string">In today is hotels, spy cameras have become commonplace. Upon entering your room, promptly use the hidden camera detector to thoroughly inspect the entire area.</string>
+    <string name="bathroom">When conducting a manual scan, be on the lookout for the following devices resembling lenses:\n
+
+\n1- As a precaution, turn off the water heater before bathing.\n
+
+\n2- Exercise caution when interacting with mirrors. Check for any gaps between your finger and its reflection. If none are detected, there may be a hidden camera behind the mirror.\n
+
+\n3- Take preventive action by applying a sticker or Sellotape over the visible part of the smoke or ceiling detector.\n
+
+\n4- Be cautious with lamps and bulbs. Consider using curtains where possible to mitigate potential risks.\n
+
+\n5- If you come across anything suspicious, promptly inform the authorities.</string>
+
+    <string name="bedroom">In today is world, spy cameras are increasingly found in hotel rooms. Upon entering, utilize a hidden camera detector to meticulously inspect the entire room.\n
+\n1- Take precautionary measures by affixing a sticker or Sellotape to cover the visible part of any detectors on side tables.\n
+
+\n2- Check the room is air conditioning system.\n
+
+\n3- Consider using fans and disabling the air conditioning, if possible. Ensure that ceiling fans are turned off.\n
+
+\n4- Beware of potential hidden cameras behind the TV: Disconnect the main power source and position items in front of the camera facing the television.\n
+
+\n5- Keep the nightlight turned off or redirect its illumination away from sensitive areas.\n
+
+\n6- Place the flower pot in a spot with minimal visibility.\n
+
+\n7- Exercise caution: Ensure the coffee maker is unplugged and stored inside a cabinet.</string>
+
+    <string name="outside">It is important not to conceal your identity in public places, as this goes against protocol. Exercise discretion and behave accordingly.\n
+
+\n1- Take preventive measures by applying a sticker or Sellotape to cover the visible part of any detectors on side tables.\n
+
+\n2- Whether you are at the mall, military bases, schools, hospitals, libraries, or other public spaces, adopting simple strategies can help you avoid uncomfortable situations.\n
+</string>
+    <string name="changing">"Please take note of the following devices during your manual scan. Look out for any lens-like components on the devices listed below.\n
+\n1- Exercise caution when touching mirrors. Check for any gaps between your finger and its reflection. If there are none, there could be a hidden camera behind the mirror.\n
+\n2- Pay attention to hangers. Inspect the aperture for anything resembling screws, and cover each one accordingly.\n
+\n3- Be wary of ceiling or smoke detectors. Place a sticker or sellotape over the visible part of the detector. If you notice anything suspicious, alert the authorities immediately. By taking simple precautions, you can minimize the risk of encountering spy cameras. Possible alterations to spy camera presence.</string>
+    <string name="answer_one">Cell phone detectors are equipped with bugs designed to detect RF transmission signals. Upon detecting such signals from an activated cell phone, the LED light begins blinking, accompanied by a beeping alarm.</string>
+    <string name="question_one">How do mobile phones detect devices?</string>
+
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <declare-styleable name="dark">
+        <attr name="backgroundColor" format="color"/>
+        <attr name="card_background" format="color"/>
+        <attr name="special_card" format="reference"/>
+        <attr name="Text_Color" format="color"/>
+        <attr name="indicator" format="color"/>
+        <attr name="back_arrow" format="reference"/>
+        <attr name="ripple" format="reference"/>
+
+        <attr name="flow_one" format="reference"/>
+        <attr name="flow_two" format="reference"/>
+        <attr name="flow_three" format="reference"/>
+        <attr name="flow_four" format="reference"/>
+        <attr name="flow_five" format="reference"/>
+        <attr name="drawer_background" format="reference"/>
+        <attr name="drawer_privacy" format="reference"/>
+        <attr name="drawer_tips" format="reference"/>
+        <attr name="drawer_star" format="reference"/>
+        <attr name="drawer_share" format="reference"/>
+        <attr name="drawer_main" format="reference"/>
+        <attr name="hidden_cam" format="reference"/>
+
+
+    </declare-styleable>
+    
+</resources>

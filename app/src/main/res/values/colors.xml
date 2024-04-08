@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#037EC7</color>
+    <color name="lineStroke">#e8080a</color>
+    <color name="lineFill">#008acb</color>
+    <color name="chartBackground">#193244</color>
+    <color name="gridColor">#7a8c99</color>
+    <color name="darkMood">#0F2A3D</color>
+    <color name="green">#008C3A</color>
+    <color name="exitBlue">#2196F3</color>
+
+
+</resources>

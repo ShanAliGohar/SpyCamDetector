@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.MetalDetector"
+    android:screenOrientation="portrait"
+    android:background="?attr/backgroundColor">
+
+    <TextView
+        android:id="@+id/headingtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Metal Detector"
+        android:textColor="?attr/Text_Color"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/backIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backIcon" />
+
+    <ImageView
+        android:id="@+id/backIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/white_wripple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/back_arrow" />
+
+    <com.github.anastr.speedviewlib.ImageSpeedometer
+        android:id="@+id/mobileImage"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/detectMessageText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headingtext"
+        app:sv_image="@drawable/metal_detector_speedometer"
+        app:sv_indicator="KiteIndicator"
+        app:sv_indicatorLightColor="@color/blue"
+        app:sv_speedTextPadding="30dp"
+        app:sv_speedTextPosition="BOTTOM_CENTER"
+        app:sv_unit="μT"
+        app:sv_withIndicatorLight="true" />
+
+    <TextView
+        android:id="@+id/detectMessageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Device Detected"
+        android:textColor="#F20405"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/spy_graph"
+        app:layout_constraintEnd_toEndOf="@+id/mobileImage"
+        app:layout_constraintStart_toStartOf="@+id/mobileImage"
+        app:layout_constraintTop_toBottomOf="@+id/mobileImage" />
+
+     <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/spy_graph"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detectMessageText"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="backgroundColor">@color/white</item>
+        <item name="card_background">@color/white</item>
+        <item name="Text_Color">@color/black</item>
+        <item name="special_card">@drawable/main_card_background</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="back_arrow">@drawable/baseline_arrow_back_ios_24</item>
+
+        <item name="flow_one">@drawable/flow_five</item>
+        <item name="flow_two">@drawable/flow_four</item>
+        <item name="flow_three">@drawable/flow_three</item>
+        <item name="flow_four">@drawable/flow_two</item>
+        <item name="flow_five">@drawable/flow_one</item>
+        <item name="drawer_background">@color/white</item>
+
+        <item name="drawer_privacy">@drawable/privacy_black</item>
+        <item name="drawer_tips">@drawable/tips_black</item>
+        <item name="drawer_star">@drawable/star_black</item>
+        <item name="drawer_share">@drawable/share_black</item>
+        <item name="drawer_main">@drawable/drawer_main_icon</item>
+        <item name="hidden_cam">@drawable/hidden_cam_dark</item>
+        <item name="indicator">@color/exitBlue</item>
+        <item name="ripple">@drawable/wripple_img</item>
+
+
+
+
+    </style>
+    <style name="DarkTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="backgroundColor">@color/darkMood</item>
+        <item name="card_background">@color/darkMood</item>
+        <item name="Text_Color">@color/white</item>
+        <item name="special_card">@drawable/main_card_background_dark</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="back_arrow">@drawable/back_white</item>
+
+        <item name="flow_one">@drawable/flow_white_one</item>
+        <item name="flow_two">@drawable/flow_white_two</item>
+        <item name="flow_three">@drawable/flow_white_three</item>
+        <item name="flow_four">@drawable/flow_white_four</item>
+        <item name="flow_five">@drawable/flow_white_five</item>
+        <item name="drawer_background">@color/blue</item>
+        <item name="ripple">@drawable/white_wripple</item>
+
+        <item name="drawer_tips">@drawable/bulbicon</item>
+        <item name="drawer_star">@drawable/staricon</item>
+        <item name="drawer_share">@drawable/sharewhite</item>
+        <item name="drawer_privacy">@drawable/tick</item>
+        <item name="drawer_main">@drawable/drawer_main_icon</item>
+        <item name="hidden_cam">@drawable/speedometer</item>
+        <item name="indicator">@color/white</item>
+
+
+
+    </style>
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+    <style name="CustomRatingBar" parent="Widget.AppCompat.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_bar_combine</item>
+        <item name="android:minHeight">15dip</item>
+        <item name="android:maxHeight">47dip</item>
+    </style>
+</resources>
+

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait"
+    android:background="?attr/backgroundColor">
+
+
+    <TextView
+        android:id="@+id/headingtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Hidden Camera"
+        android:textColor="?attr/Text_Color"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/backIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/backIcon"
+        app:layout_constraintTop_toTopOf="@+id/backIcon" />
+
+    <ImageView
+        android:id="@+id/backIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/white_wripple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/back_arrow" />
+
+    <com.github.anastr.speedviewlib.ImageSpeedometer
+        android:id="@+id/awesomeSpeedometer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:sv_image="?attr/hidden_cam"
+        app:sv_indicator="TriangleIndicator"
+        app:sv_indicatorColor="?attr/indicator"
+        app:sv_indicatorWidth="100dp"
+        app:sv_speedTextColor="@color/darkMood"
+        app:sv_speedometerColor="#ef3737"
+        app:sv_textColor="@color/white"
+        app:sv_unit="" />
+
+    <TextView
+        android:id="@+id/detectMessageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/inter"
+        android:text="Detecting Suspicious Devices in current network "
+        android:textColor="?attr/Text_Color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/awesomeSpeedometer"
+        app:layout_constraintStart_toStartOf="@+id/awesomeSpeedometer" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

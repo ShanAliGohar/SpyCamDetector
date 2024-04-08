@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.WiredCamera"
+    android:screenOrientation="portrait"
+    android:background="?attr/backgroundColor">
+
+
+    <TextView
+        android:id="@+id/headingtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Wired Camera"
+        android:textColor="?attr/Text_Color"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/backIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backIcon" />
+
+    <ImageView
+        android:id="@+id/backIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/white_wripple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/back_arrow" />
+
+    <com.github.anastr.speedviewlib.ImageSpeedometer
+        android:id="@+id/mobileImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:sv_image="@drawable/wired_cam_speedometer"
+        app:sv_indicator="NoIndicator"
+        app:sv_speedTextColor="@color/white"
+        app:sv_speedTextFormat="INTEGER"
+        app:sv_speedTextPosition="CENTER"
+        app:sv_speedTextSize="40sp"
+        app:sv_unit="%"
+        app:sv_unitSpeedInterval="5dp"
+        app:sv_unitTextColor="@color/white"
+        app:sv_unitTextSize="40sp" />
+
+    <TextView
+        android:id="@+id/detectMessageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/inter"
+        android:text=""
+        android:textColor="?attr/Text_Color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/mobileImage"
+        app:layout_constraintStart_toStartOf="@+id/mobileImage" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.InfraredCamera"
+    android:background="?attr/backgroundColor">
+
+    <TextView
+        android:id="@+id/headingtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Infrared Camera"
+        android:textColor="?attr/Text_Color"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/backIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backIcon" />
+
+    <ImageView
+        android:id="@+id/backIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/white_wripple"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/back_arrow"  />
+
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/infrared_camera"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:keepScreenOn="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/camBtn"
+        app:layout_constraintTop_toBottomOf="@+id/headingtext"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="-178dp" />
+
+    <ImageView
+        android:id="@+id/camBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/infrared_cam_btn_icon" />
+
+    <ImageView
+        android:id="@+id/filterOne"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/infrared_camera"
+        app:layout_constraintEnd_toStartOf="@+id/filterTwo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/infrared_filter_one" />
+
+    <ImageView
+        android:id="@+id/filterTwo"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="@+id/filterOne"
+        app:layout_constraintEnd_toStartOf="@+id/filterThree"
+        app:layout_constraintStart_toEndOf="@+id/filterOne"
+        app:layout_constraintTop_toTopOf="@+id/filterOne"
+        app:srcCompat="@drawable/infrared_filter_two" />
+
+    <ImageView
+        android:id="@+id/filterThree"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="@+id/filterOne"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/filterTwo"
+        app:layout_constraintTop_toTopOf="@+id/filterOne"
+        app:srcCompat="@drawable/infrared_filter_three" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:text="Black and White"
+        android:textColor="?attr/Text_Color"
+        app:layout_constraintEnd_toEndOf="@+id/filterOne"
+        app:layout_constraintStart_toStartOf="@+id/filterOne"
+        app:layout_constraintTop_toBottomOf="@+id/filterOne" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:text="Sepia FIlter"
+        android:textColor="?attr/Text_Color"
+        app:layout_constraintEnd_toEndOf="@+id/filterTwo"
+        app:layout_constraintStart_toEndOf="@+id/filterOne"
+        app:layout_constraintTop_toBottomOf="@+id/filterTwo" />
+
+    <TextView
+        android:id="@+id/blackandWhiteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:text="Invert Color Filter"
+        android:textColor="?attr/Text_Color"
+        app:layout_constraintEnd_toEndOf="@+id/filterThree"
+        app:layout_constraintStart_toEndOf="@+id/filterTwo"
+        app:layout_constraintTop_toBottomOf="@+id/filterThree" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
