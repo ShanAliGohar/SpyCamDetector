@@ -122,11 +122,8 @@ class MainActivity : AppCompatActivity() {
     private fun navigateToNext() {
         with(binding) {
             hiddenCamera.setOnClickListener {
-
-
                     val intent = Intent(this@MainActivity, HiddenCamera::class.java)
                     startActivity(intent)
-
             }
             infraredCameraIcon.setOnClickListener {
                     val intent = Intent(this@MainActivity, InfraredCamera::class.java)
@@ -136,11 +133,9 @@ class MainActivity : AppCompatActivity() {
                         val intent = Intent(this@MainActivity, WiredCamera::class.java)
                         startActivity(intent)
                     }
-
                 spyCameraDetector.setOnClickListener {
                     val intent = Intent(this@MainActivity, SpyCam::class.java)
                     startActivity(intent)
-
                 }
                 matelCameraDetector.setOnClickListener {
                         val intent = Intent(this@MainActivity, MetalDetector::class.java)
@@ -288,7 +283,6 @@ class MainActivity : AppCompatActivity() {
 
                 dialog.dismiss()
             }
-//        customExitDialog();
         }
 
 }

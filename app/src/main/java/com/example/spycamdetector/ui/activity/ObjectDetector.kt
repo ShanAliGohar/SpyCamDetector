@@ -1,12 +1,15 @@
 package com.example.spycamdetector.ui.activity
-
+import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.AspectRatio
 import androidx.camera.core.Camera
@@ -25,8 +28,9 @@ import org.tensorflow.lite.task.vision.detector.Detection
 import java.util.LinkedList
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+
 @ExperimentalGetImage
-class ObjectDetector : AppCompatActivity(),ObjectDetectorHelper.DetectorListener {
+class ObjectDetector : AppCompatActivity(), ObjectDetectorHelper.DetectorListener {
     private lateinit var binding: ActivityObjectDetectorBinding
     private lateinit var objectDetectorHelper: ObjectDetectorHelper
     private lateinit var bitmapBuffer: Bitmap
@@ -37,8 +41,7 @@ class ObjectDetector : AppCompatActivity(),ObjectDetectorHelper.DetectorListener
 
     private lateinit var cameraExecutor: ExecutorService
 
-
-    private val TAG = "ObjectDetector"
+    private val TAG: String = "ObjectDetector"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,19 +63,47 @@ class ObjectDetector : AppCompatActivity(),ObjectDetectorHelper.DetectorListener
 
         objectDetectorHelper = ObjectDetectorHelper(
             context = this,
-            objectDetectorListener = this)
+            objectDetectorListener = this
+        )
 
         // Initialize our background executor
         cameraExecutor = Executors.newSingleThreadExecutor()
 
         // Wait for the views to be properly laid out
-        binding.viewFinder.post{
-            setUpCamera()
-
+        if (allPermissionsGranted()) {
+            // Execute your activity's methods here if permissions are granted
+            binding.viewFinder.post {
+                setUpCamera()
+            }
+        } else {
+            requestPermissionLauncher.launch(Manifest.permission.CAMERA)
+        }
     }
 
-
+    private fun allPermissionsGranted(): Boolean {
+        return ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.CAMERA
+        ) == PackageManager.PERMISSION_GRANTED
     }
+
+    private val requestPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (isGranted) {
+                // Permission is granted, execute your activity's methods here
+                setUpCamera()
+            } else {
+                // Permission denied, request again
+
+                Toast.makeText(
+                    this,
+                    "Camera permission is required to use this feature",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+            }
+        }
+
     private fun setUpCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
         cameraProviderFuture.addListener(
@@ -86,15 +117,15 @@ class ObjectDetector : AppCompatActivity(),ObjectDetectorHelper.DetectorListener
             ContextCompat.getMainExecutor(this)
         )
     }
+
     @SuppressLint("UnsafeOptInUsageError")
     private fun bindCameraUseCases() {
-
         // CameraProvider
-        val cameraProvider =
+        val cameraProvider: ProcessCameraProvider =
             cameraProvider ?: throw IllegalStateException("Camera initialization failed.")
 
         // CameraSelector - makes assumption that we're only using the back camera
-        val cameraSelector =
+        val cameraSelector: CameraSelector =
             CameraSelector.Builder().requireLensFacing(CameraSelector.LENS_FACING_BACK).build()
 
         // Preview. Only using the 4:3 ratio because this is the closest to our models
@@ -124,7 +155,6 @@ class ObjectDetector : AppCompatActivity(),ObjectDetectorHelper.DetectorListener
                                 Bitmap.Config.ARGB_8888
                             )
                         }
-
                         detectObjects(image)
                     }
                 }
@@ -135,7 +165,12 @@ class ObjectDetector : AppCompatActivity(),ObjectDetectorHelper.DetectorListener
         try {
             // A variable number of use-cases can be passed here -
             // camera provides access to CameraControl & CameraInfo
-            camera = cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageAnalyzer)
+            camera = cameraProvider.bindToLifecycle(
+                this,
+                cameraSelector,
+                preview,
+                imageAnalyzer
+            )
 
             // Attach the viewfinder's surface provider to preview use case
             preview?.setSurfaceProvider(binding.viewFinder.surfaceProvider)
@@ -165,8 +200,8 @@ class ObjectDetector : AppCompatActivity(),ObjectDetectorHelper.DetectorListener
         imageWidth: Int
     ) {
         runOnUiThread {
-           /* binding.bottomSheetLayout.inferenceTimeVal.text =
-                String.format("%d ms", inferenceTime)*/
+            /* binding.bottomSheetLayout.inferenceTimeVal.text =
+                 String.format("%d ms", inferenceTime)*/
 
             // Pass necessary information to OverlayView for drawing on the canvas
             binding.objectOverlayView.setResults(
@@ -185,5 +220,4 @@ class ObjectDetector : AppCompatActivity(),ObjectDetectorHelper.DetectorListener
             Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
         }
     }
-
 }
